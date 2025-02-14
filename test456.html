@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanish - Interactive front-end developer</title>
+    <link rel="icon" href="MY LOGO ICON.png">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Mobile Menu Icon */
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            padding: 15px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            display: none; /* Hidden by default on larger screens */
+        }
+
+        /* Mobile Navigation Panel */
+        .nav-panel {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hidden off-screen */
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding-top: 60px;
+            transition: 0.3s;
+        }
+        .nav-panel a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .nav-panel a:hover {
+            background-color: #575757;
+        }
+        .show-nav {
+            left: 0; /* Show panel */
+        }
+
+        /* Responsive Handling */
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block; /* Show menu icon on small screens */
+            }
+            .navigation {
+                display: none; /* Hide standard nav on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <div class="content">
+            <img class="logo" src="MY LOGO ICON.png" alt="Logo">
+            
+            <!-- Mobile Menu Icon -->
+            <div class="menu-icon" onclick="toggleNav()">☰</div>
+
+            <!-- Standard Navigation (Visible on larger screens) -->
+            <div class="navigat">
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="contactme.html">Contact</a></li>
+                        <li><a href="#">Experiments</a></li>
+                        <li><a href="#projects">Case Studies</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <a href="#" id="theme-toggle"><img id="theme" src="light-mode.png" alt="Toggle Theme"></a>
+    </header>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="navPanel" class="nav-panel">
+        <a href="javascript:void(0)" onclick="toggleNav()">Close ✖</a>
+        <a href="contactme.html">Contact</a>
+        <a href="#">Experiments</a>
+        <a href="#projects">Case Studies</a>
+    </div>
+
+    <script>
+        function toggleNav() {
+            let navPanel = document.getElementById("navPanel");
+            if (navPanel.classList.contains("show-nav")) {
+                navPanel.classList.remove("show-nav");
+            } else {
+                navPanel.classList.add("show-nav");
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanish - Interactive front-end developer</title>
+    <link rel="icon" href="MY LOGO ICON.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <div class="content">
+            <img class="logo" src="MY LOGO ICON.png" alt="Logo">
+            <div class="menu-icon" onclick="toggleNav()"><img src="menu_24dp_F7F7F7_FILL0_wght400_GRAD0_opsz24.png" alt="menu icon"></div>
+            <div class="navigat">
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#" id="theme-toggle"><img id="theme" src="light-mode.png" alt="Toggle Theme"></a></li>
+                        <li><a href="contactme.html">Contact</a></li>
+                        <li><a href="#">Experiments</a></li>
+                        <li><a href="#projects">Case Studies</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="navPanel" class="nav-panel">
+            <a href="javascript:void(0)" onclick="toggleNav()">Close ✖</a>
+            <a href="contactme.html">Contact</a>
+            <a href="#">Experiments</a>
+            <a href="#projects">Case Studies</a>
+        </div>
+    </header>
+    <img src="MY LOGO ICON.png" class="background-logo" alt="Thanish's personal logo">
+    <div id="info">
+        <p class="myname">THANISH</p>
+        <p class="myrole">Interactive Front-end Developer</p>
+        <div class="aboutme-btn">
+            <button onclick="location.href='aboutme.html'" class="aboutme" type="button">About Me!</button>
+            <img class="aboutme-forward-icon" src="forward icon.png" alt="">
+        </div>
+        <p class="credit">© 2025 Thanish</p>
+    </div>
+    <div class="icons">
+        <ul id="icon">
+            <li><a href="https://www.linkedin.com/in/thanish-p-421204200" target="_blank">
+                <img class="linkedin" src="linkedin light.png" alt="LinkedIn">
+            </a></li>
+            <li><a href="https://github.com/thanish2806" target="_blank">
+                <img class="github" src="github-light.png" alt="GitHub">
+            </a></li>
+            <li><a href="https://www.instagram.com/thanish_fze/" target="_blank">
+                <img class="instagram" src="instagram light.png" alt="Instagram">
+            </a></li>
+        </ul>
+    </div>
+    <ul class="works">
+        <li><a href="#projects">Works</a></li><br>
+        <li><a href="#projects"><img class="arrow" src="arrow.png" alt="Arrow"></a></li>
+    </ul>
+    <div id="projects">
+        <ul class="project-images">
+            <h2>Latest works</h2>
+            <li><a href="https://thanish2806.github.io/Calculator/" target="_blank">
+                <img src="calculator-project.jpeg" alt="LinkedIn">
+            </a></li>
+            <li><a href="https://github.com/thanish2806" target="_blank">
+                <img src="cardgame.jpeg" alt="GitHub">
+            </a></li>
+            <li><a href="https://www.instagram.com/thanish_fze/" target="_blank">
+                <img src="samplebg.jpeg" alt="Instagram">
+            </a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="icons-bottom">
+            <ul id="icons-bottom">
+                <li><a href="https://www.linkedin.com/in/thanish-p-421204200" target="_blank">
+                    <img class="linkedin" src="linkedin light.png" alt="LinkedIn">
+                </a></li>
+                <li><a href="https://github.com/thanish2806" target="_blank">
+                    <img class="github" src="github-light.png" alt="GitHub">
+                </a></li>
+                <li><a href="https://www.instagram.com/thanish_fze/" target="_blank">
+                    <img class="instagram" src="instagram light.png" alt="Instagram">
+                </a></li>
+            </ul>
+        </div>
+        <p class="footer">© 2025 Techshark Digital. All Rights Reserved.</p>
+    </footer>
+    <script>
+        var themeToggle = document.getElementById("theme-toggle");
+        var theme = document.getElementById("theme");
+        themeToggle.onclick = function(event){
+            event.preventDefault();
+            document.body.classList.toggle("dark-theme");
+            
+            var linkedinIcon = document.querySelector(".linkedin");
+            var githubIcon = document.querySelector(".github");
+            var instagramIcon = document.querySelector(".instagram");
+            
+            if(document.body.classList.contains("dark-theme")){
+                theme.src = "dark-mode.png";
+                linkedinIcon.src = "linkedin dark.png";
+                githubIcon.src = "github-dark.png";
+                instagramIcon.src = "instagram dark.png";
+            }
+            else{
+                theme.src = "light-mode.png";
+                linkedinIcon.src = "linkedin light.png";
+                githubIcon.src = "github-light.png";
+                instagramIcon.src = "instagram light.png";
+            }
+        }
+        
+        function toggleNav() {
+            let navPanel = document.getElementById("navPanel");
+            if (navPanel.classList.contains("show-nav")) {
+                navPanel.classList.remove("show-nav");
+            } else {
+                navPanel.classList.add("show-nav");
+            }
+        }
+    </script>
+</body>
+</html>
